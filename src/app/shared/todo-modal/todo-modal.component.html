@@ -1,0 +1,19 @@
+@if(showModal){
+<div class="modal-overlay ">
+    <div class="modal-content p-3 animate__animated animate__fadeInDown animate__faster">
+
+
+        <div class="text-center mt-1 kanit_medium font-l title">{{isNewNote ? 'NEW NOTE' : 'EDIT NOTE'}}</div>
+        <div class="search mt-2 mb-4">
+            <textarea [(ngModel)]="userNote" rows="3" cols="20" maxlength="100" placeholder="Input your note..."
+                (ngModelChange)="onMessageChange($event)"></textarea>
+        </div>
+        <div class=" d-flex justify-content-between">
+            <div (click)="close()" class="outline_btn py-1 px-2">CANCEL</div>
+            <div class="fill_btn py-1 px-2" (click)="isNewNote? addNote() : editNote()">APPLY</div>
+        </div>
+    </div>
+
+</div>
+
+}

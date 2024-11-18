@@ -20,10 +20,10 @@ input::placeholder {
 }
 
 .search {
-    /* border: 1px solid var(--background-color); */
+
     border: 1px solid var(--text-color);
     border-radius: 5px;
-    /* box-shadow: 0px 0px 2px 1px var(--text-color); */
+    width: 40vw;
     padding: 1px;
 }
 
@@ -44,14 +44,12 @@ input::placeholder {
 
 }
 
-.child_two {
+.drops {
     top: 100%;
     width: 6.25rem;
 }
 
-
-
-.pos {
+.drops_ {
     background-color: #fff;
     color: var(--button-background);
     border: 1px solid var(--text-color);
@@ -60,7 +58,7 @@ input::placeholder {
     border-radius: 4px;
 }
 
-.pos div:hover {
+.drops_ div:hover {
     background-color: hsla(243, 100%, 69%, 0.2);
     color: var(--button-background);
 }
@@ -99,4 +97,93 @@ input::placeholder {
 .add:hover {
     background-color: var(--button-hover-background);
 
+}
+
+/* Customize checkbox */
+
+.checkbox_container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkbox_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.25rem;
+    width: 1.25rem;
+    border: 2px solid var(--button-background);
+}
+
+.checkbox_container:hover input~.checkmark {
+    border: 2px solid var(--background-color);
+    box-shadow: 0px 0px 2px 1px var(--text-color);
+}
+
+.checkbox_container input:checked~.checkmark {
+    background-color: var(--button-background);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox_container input:checked~.checkmark:after {
+    display: block;
+}
+
+.checkbox_container .checkmark:after {
+    left: 7px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--button-text-color);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.icon_pen {
+    color: var(--icon-pen);
+}
+
+.icon_trash {
+    color: var(--icon-pen);
+}
+
+.icon_pen:hover {
+    color: var(--button-background);
+}
+
+.icon_trash:hover {
+    color: #E50000;
+}
+
+.line_br {
+    border-bottom: 1px solid var(--text-color);
+}
+
+.todo-text {
+    color: var(--todo-text-color);
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 50%;
 }
