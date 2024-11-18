@@ -25,7 +25,7 @@ export class TodoService {
   getTodo(id: number): Todo[] {
     let list = this.todos
     let todo = list.filter(todo => todo.id == id)
-    console.log("todo", todo)
+
     return todo
   }
 
@@ -56,7 +56,6 @@ export class TodoService {
     this.todos = this.todos.filter(todo => todo.id !== id)
     localStorage.setItem("todos", JSON.stringify(this.todos))
 
-    console.log("id: ", id)
-    console.log("this all todos: ", this.todos)
+
   }
 }
