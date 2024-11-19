@@ -125,7 +125,17 @@ export class TodoListComponent implements OnInit {
     if (val == '') {
       this.filterListTodo = this.listOfTodos()
     } else {
-      this.filterListTodo = this.listOfTodos().filter((todo: { title: string; }) => todo.title.toLowerCase().includes(val.toLowerCase()))
+      let filterTitle: any
+      let filterId: any
+      let filteredList: any = []
+      filterTitle = this.listOfTodos().filter((todo: { title: string; }) => todo.title.toLowerCase().includes(val.toLowerCase()))
+      filterId = this.listOfTodos().filter((todo: { id: number; }) => todo.id.toString().toLowerCase().includes(val.toLowerCase()))
+      filteredList = [...filterId, filterTitle]
+
+      this.filterListTodo = filteredList.filter((value: { id: any; }, index: any, self: any[]) =>
+        index === self.findIndex((t) => t.id === value.id));
+      this.filterListTodo = filteredList ? filteredList.flat() : []
+      console.log("filterId:", filterId, "filterTitle", filterTitle, "filteredList", filteredList)
     }
   }
 

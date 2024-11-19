@@ -28,6 +28,8 @@ export class TodoModalComponent {
   ngOnChanges() {
     if (!this.isNewNote) {
       this.userNote = this.hasNote
+    } else {
+      this.userNote = ''
     }
 
   }

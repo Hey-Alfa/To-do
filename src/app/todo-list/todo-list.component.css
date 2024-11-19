@@ -167,7 +167,7 @@ input::placeholder {
     color: var(--icon-pen);
 }
 
-.icon_pen:hover {
+.hover_pen:hover {
     color: var(--button-background);
 }
 
